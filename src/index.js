@@ -3,7 +3,7 @@
 const imagePaths = [
     "/images/2022_1017_072552_002.JPG", 
     "/images/2022_1017_075055_001.JPG", 
-    "2022_1017_081004_002.JPG"
+    "/images/2022_1017_081004_002.JPG"
 ];
 
 const carousel = document.getElementById('imageCarousel');
@@ -24,6 +24,10 @@ function prevImage() {
     showImages();
 }
 
+function autoChangeImage() {
+    nextImage();
+}
+
 // create img elements dynamically
 
 imagePaths.forEach((path) => {
@@ -33,4 +37,9 @@ imagePaths.forEach((path) => {
     img.alt = "Carousel img";
     carousel.appendChild(img);
 
-})
+});
+
+// Maybe add next btns
+// const interValid = setInterval(autoChangeImage, 3000);
+
+document.addEventListener("DOMContentLoaded", showImages);
