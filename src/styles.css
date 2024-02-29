@@ -4,6 +4,60 @@
     box-sizing: border-box;
 }
 
+:root {
+    --accent-color: #4A4944;
+    --background-card-domnant-color: #F6FDFF;
+
+}
+
+.container {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* navigation */
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 0.625rem;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.625rem 0 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+}
+
+#navbar li {
+    margin: 0.325rem 0.325rem;
+}
+
+.nav-a {
+    text-decoration: none;
+}
 /* image carousel */
 
 .main-container {
