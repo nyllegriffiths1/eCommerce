@@ -2,7 +2,6 @@
 
 const imagePaths = [
     "/images/testimg5.jpg",
-    
 ];
 
 const carousel = document.getElementById('imageCarousel');
@@ -39,6 +38,6 @@ imagePaths.forEach((path) => {
 });
 
 // Maybe add next btns
-const interValid = setInterval(autoChangeImage, 3000);
+// const interValid = setInterval(autoChangeImage, 3000);
 
 document.addEventListener("DOMContentLoaded", showImages);
