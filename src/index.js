@@ -1,15 +1,19 @@
 // Add image urls here
-
 const imagePaths = [
-    "/images/testimg5.jpg",
+    "/images/testtestimg2.jpg",
+    "/images/testtestimg3.jpg",
+    "/images/testtestimg4.jpg"
 ];
 
 const carousel = document.getElementById('imageCarousel');
-
 let currentIndex = 0;
 
 function showImages() {
-    carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+    carousel.innerHTML = ''; // Clear existing images
+    const img = document.createElement("img");
+    img.src = imagePaths[currentIndex];
+    img.alt = "Carousel img";
+    carousel.appendChild(img);
 }
 
 function nextImage() {
@@ -26,18 +30,7 @@ function autoChangeImage() {
     nextImage();
 }
 
-// create img elements dynamically
-
-imagePaths.forEach((path) => {
-    const img = 
-    document.createElement("img");
-    img.src = path;
-    img.alt = "Carousel img";
-    carousel.appendChild(img);
-
-});
-
 // Maybe add next btns
-// const interValid = setInterval(autoChangeImage, 3000);
+const interValid = setInterval(autoChangeImage, 3000);
 
 document.addEventListener("DOMContentLoaded", showImages);
