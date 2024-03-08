@@ -1,8 +1,8 @@
 // Add image urls here
 const imagePaths = [
-    "/images/testtestimg2.jpg",
-    "/images/testtestimg3.jpg",
-    "/images/testtestimg4.jpg"
+    "./images/testtestimg2.jpg",
+    "./images/testtestimg3.jpg",
+    "./images/testtestimg4.jpg"
 ];
 
 const carousel = document.getElementById('imageCarousel');
