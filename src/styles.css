@@ -246,14 +246,14 @@
     color: black;
 }
 
-/* .price-and-product-link a:hover {
-    color: aquamarine;
+.price-and-product-link a:hover {
+    color: rgb(254, 118, 64);
     transform: transform 0.2s ease-in-out;
 }
 
 .price-and-product-link a:active {
     transform: scale(1.1);
-} */
+}
 
 .product-card-shopping-cart {
     display: flex;

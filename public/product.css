@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Itim&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Anta, sans-serif;
+}
+
+.container {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* navbar */
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FAFAFA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.2rem 0 1.2rem 1.2rem;
+}
+
+.logo-container img {
+    height: 25px;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1..2rem 0.625rem 0 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    color: black;
+}
+
+#navbar li {
+    margin: 0.625rem;
+}
+
+.nav-a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-a:hover {
+    color: rgb(254, 118, 64);
+    translate: transform 0.2s;
+}
+
+.nav-a:active {
+    transform: scale(1.2);
+}
+
+/* Product layout */
+ .product-layout-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1.2rem 0 1.2rem 0;
+ }
+
+ .img-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: 2px solid black;
+ }
+
+ .text-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 1.2rem 0 1.2rem 0;
+    text-align: center;
+ }
+
+ .text-layout h5 {
+    font-size: 2.5rem;
+    margin: 0.325rem 0;
+ }
+
+ .text-layout h6 {
+    font-size: 1.5rem;
+    margin: 0.325rem 0;
+ }
+
+ .text-layout form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1.5rem 0;
+ }
+
+ #quantity-input {
+    width: 2.125rem;
+    margin: 0.625rem 0.225rem 0.625rem 0.225rem;
+ }
+
+ .add-to-cart-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ #product-details-heading {
+    font-size: 2.5rem;
+    margin: 0.325rem 0;
+ }
+
+ #product-details-text {
+    font-size: 1.2rem;
+    margin: 0.325rem 0;
+    color: #898888;
+ }
