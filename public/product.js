@@ -33,9 +33,9 @@ $(document).ready(function () {
                 <form>
                     <label for="dropdown" id="size-label">Select a size:</label>
                     <select id="dropdown" name="dropdown" required>
-                        <option value="option1">S</option>
-                        <option value="option2">M</option>
-                        <option value="option3">L</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
                     </select>
                     <div class="add-to-cart-layout">
                         <!-- Quantity -->
@@ -79,8 +79,8 @@ $(document).ready(function () {
         // Update the checkout icon
         updateCheckoutIcon();
 
-        // Pass the index of the recently added product
-        displayProductsOnCheckout(cart.length - 1);
+        // Display all products on the checkout page
+        displayAllProductsOnCheckout();
     }
 
     // Function to update the checkout icon
@@ -93,32 +93,58 @@ $(document).ready(function () {
         $('#checkout-icon').text(cartItemCount);
     }
 
-    // Function to display products on the checkout page
-    function displayProductsOnCheckout(index) {
+    // Function to display all products on the checkout page
+    function displayAllProductsOnCheckout() {
         // Assuming you have a container with the id 'checkout-container' to display products
         var checkoutContainer = $('#checkout-container');
 
-        // Get the product at the specified index
-        var product = cart[index];
+        // Clear the existing content
+        checkoutContainer.html('');
 
-        // Create HTML for the product
-        var productHTML = `
-            <div class="product-item">
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>Size: ${product.size}</p>
-                <p>Quantity: ${product.quantity}</p>
-                <p>Price: ${product.price}</p>
-            </div>
-        `;
+        // Loop through all products in the cart
+        cart.forEach(function(product, index) {
+            // Create HTML for each product
+            var productHTML = `
+                <div class="product-item">
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Size: ${product.size}</p>
+                    <p>Quantity: ${product.quantity}</p>
+                    <p>Price: ${product.price}</p>
+                    <button class="delete-icon" onclick="deleteProduct(${index})">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                </div>
+            `;
 
-        // Append the product HTML to the container
-        checkoutContainer.html(productHTML);
+            // Append the product HTML to the checkout container
+            checkoutContainer.append(productHTML);
+        });
     }
+
+    // Function to delete product from the cart
+    window.deleteProduct = function(index) {
+        // Remove the product at the specified index
+        cart.splice(index, 1);
+
+        // Store the updated cart in localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update the checkout icon
+        updateCheckoutIcon();
+
+        // Display all products on the checkout page
+        displayAllProductsOnCheckout();
+    };
 
     // Call the function when the page loads
     displayProductDetails();
 });
+
+
+
+
+
 
 
 
