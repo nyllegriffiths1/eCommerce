@@ -85,13 +85,38 @@ $(document).ready(function () {
 
     // Function to update the checkout icon
     function updateCheckoutIcon() {
+        // Retrieve cart information from localStorage
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
         // Your logic to update the checkout icon with the number of items in the cart
-        // This could involve counting the elements in the 'cart' array
         var cartItemCount = cart.length;
 
         // Update the checkout icon display
-        $('#checkout-icon').text(cartItemCount);
+        var checkoutIcon = $('#icon-shopping-cart');
+        checkoutIcon.text(cartItemCount);
+
+        // Add a small red circle if there are items in the cart
+        if (cartItemCount > 0) {
+            checkoutIcon.css({
+                'background-color': 'red',
+                'color': 'white',
+                'border-radius': '50%',
+                'padding': '0.325rem',
+                'font-size': '12px',
+                'position': 'relative',
+                'margin': '0 0.625rem 0 0'
+            });
+        } else {
+            // Reset styles if the cart is empty
+            checkoutIcon.removeAttr('style');
+        }
     }
+
+
+    
+
+
+
 
     // Function to display all products on the checkout page
     function displayAllProductsOnCheckout() {
