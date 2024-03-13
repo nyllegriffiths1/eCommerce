@@ -44,11 +44,14 @@ $(document).ready(function () {
         displayTotalPrice();
     }
 
-    // Function to calculate and display the total price
+   // Function to calculate and display the total price
     function displayTotalPrice() {
-        // Calculate the total price
-        var totalPrice = cart.reduce(function(sum, product) {
-            return sum + parseFloat(product.price.replace('$', '')); // Remove '$' and convert to float
+        // Calculate the total price considering quantity for each product
+        var totalPrice = cart.reduce(function (sum, product) {
+            var productPrice = parseFloat(product.price.substring(1)); // Assuming the price is formatted as '$XX.XX'
+            var productQuantity = parseInt(product.quantity);
+
+            return sum + (productPrice * productQuantity);
         }, 0);
 
         // Create HTML for total price
@@ -62,6 +65,7 @@ $(document).ready(function () {
         // Append the total HTML to the checkout container
         $('#checkout-container').append(totalHTML);
     }
+
 
 
     // Function to delete product from the cart
