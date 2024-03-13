@@ -39,7 +39,30 @@ $(document).ready(function () {
             // Append the product HTML to the checkout container
             checkoutContainer.append(productHTML);
         });
+
+        // Calculate and display the total price
+        displayTotalPrice();
     }
+
+    // Function to calculate and display the total price
+    function displayTotalPrice() {
+        // Calculate the total price
+        var totalPrice = cart.reduce(function(sum, product) {
+            return sum + parseFloat(product.price.replace('$', '')); // Remove '$' and convert to float
+        }, 0);
+
+        // Create HTML for total price
+        var totalHTML = `
+            <div id="total-container">
+                <h3>Total Price: $${totalPrice.toFixed(2)}</h3>
+                <button id="checkout-btn">Proceed To Checkout</button>
+            </div>
+        `;
+
+        // Append the total HTML to the checkout container
+        $('#checkout-container').append(totalHTML);
+    }
+
 
     // Function to delete product from the cart
     window.deleteProduct = function(index) {
@@ -56,6 +79,7 @@ $(document).ready(function () {
     // Display all products on the checkout page when it loads
     displayAllProductsOnCheckout();
 });
+
 
 
 

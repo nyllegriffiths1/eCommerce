@@ -334,3 +334,35 @@
     font-weight: bolder;
     color: black;
 }
+
+/* checkout */
+
+#total-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1.2rem 0;
+}
+
+#total-container h3 {
+    margin: 0.625rem 0;
+}
+
+#total-container button {
+    padding: 0.525rem;
+    margin: 0.325rem 0;
+    background: rgb(254, 118, 64);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+#total-container button:hover {
+    transform: scale(1.1);
+}
+
+#total-container button:active {
+    transform: scale(0.8);
+}
