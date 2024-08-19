@@ -366,3 +366,42 @@
 #total-container button:active {
     transform: scale(0.8);
 }
+
+@media (max-width: 768px) {
+
+    .what-we-do-container {
+        flex-wrap: wrap;
+    }
+
+    .middle-footer-subscribe-newsletter-container {
+        flex-wrap: wrap;
+        height: 150px;
+    }
+
+    .form-layout {
+        width: 75%;
+    }
+
+    .text-overlay h3 {
+        text-align: center;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .spacing-footer {
+        margin: .35rem 0;
+    }
+
+}
+
+@media (max-width: 430px) {
+    .middle-footer-subscribe-newsletter-container {
+        text-align: center;
+    }
+
+    .form-layout {
+        height: 0;
+    }
+}

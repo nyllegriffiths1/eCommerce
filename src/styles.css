@@ -579,7 +579,7 @@
         height: 0;
     }
 
-    #product-list {
+    /* #product-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: .65rem;
@@ -588,12 +588,13 @@
     }
 
     #new-arrivals-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: .65rem;
-        justify-items: center;
-        max-width: 430px;
-    }
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: .65rem !important;
+        justify-items: center !important;
+        max-width: 430px !important;
+    } */
+    
 }
 
 
